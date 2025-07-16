@@ -1,14 +1,13 @@
 🌟 Prime Divisors Challenge
 
-Welcome to the Prime Divisors Challenge! This Python project solves a classic programming problem with elegance and efficiency. It reads 10 integers, finds the one with the most distinct prime divisors, and outputs it along with the count. In case of ties, the largest number wins. Ready to dive into some clean code? 🚀
+A Python program that reads 10 integers and finds the one with the most distinct prime divisors. If there's a tie, it selects the largest number.
+Description
+This program solves the following problem:
 
-📜 Problem Statement
-The goal is simple yet intriguing:
-
-Input: 10 integers, one per line.
-Task: Identify the number with the highest count of distinct prime divisors.
-Output: Print the number and its prime divisor count in the format <number> <count>.
-Tiebreaker: If multiple numbers have the same count, pick the largest one.
+Read 10 integers from input.
+For each number, calculate the number of distinct prime divisors.
+Output the number with the highest count of distinct prime divisors, along with that count.
+If multiple numbers have the same count, output the largest one.
 
 Example
 Input:
@@ -26,18 +25,25 @@ Input:
 Output:
 678 3
 
-Why?678 has 3 distinct prime divisors (2, 3, 113), the highest among the inputs, making it the champion! 🏆
+Explanation:
+678 has three distinct prime divisors: 2, 3, and 113.
+Usage
 
-💻 Code Solution
-The solution is crafted in Python with a focus on readability, efficiency, and GitHub's Markdown rendering. Below is the complete code, broken down into digestible parts for clarity.
-Core Functions
+Ensure you have Python 3.8 or higher installed.
 
-is_prime(n): Determines if a number is prime by checking divisibility up to its square root.
-count_prime_divisors(n): Counts distinct prime divisors by factoring the number and verifying primality.
+Save the code in a file named prime_divisors.py.
 
-Full Code
+Run the program using:
+python prime_divisors.py
+
+
+When prompted, enter 10 integers, one per line.
+
+The program will output the number with the most distinct prime divisors and its count.
+
+
+Code
 def is_prime(n):
-    """Check if a number is prime."""
     if n < 2:
         return False
     for i in range(2, int(n ** 0.5) + 1):
@@ -46,7 +52,6 @@ def is_prime(n):
     return True
 
 def count_prime_divisors(n):
-    """Count distinct prime divisors of a number."""
     count = 0
     i = 2
     while i * i <= n:
@@ -60,7 +65,7 @@ def count_prime_divisors(n):
         count += 1
     return count
 
-# Read 10 integers from input
+# Read 10 numbers from input
 numbers = []
 for _ in range(10):
     numbers.append(int(input()))
@@ -77,39 +82,7 @@ for num in numbers:
 # Print result
 print(f"{max_number} {max_prime_count}")
 
-Code Highlights
-
-Efficiency: Uses square root optimization for prime checks and factorization. ⚡
-Clarity: Descriptive function names and comments make the code self-explanatory.
-No Dictionaries: Avoids dictionaries to respect the problem's note about order preservation.
-
-
-🛠️ How to Run
-
-Requirements: Python 3.8 or higher.
-Setup: Save the code as prime_divisors.py.
-Execution:python prime_divisors.py
-
-
-Input: Provide 10 integers, one per line.
-Output: The program displays the number with the most prime divisors and its count.
-
-Example Run
-$ python prime_divisors.py
-123
-43
-54
-12
-76
-84
-98
-678
-543
-231
-678 3
-
-
-✅ Test Cases
+Test Cases
 
 
 
@@ -128,16 +101,3 @@ Count
 2, 3
 2
 
-
-
-🎨 GitHub Styling Notes
-This README is designed to shine on GitHub with:
-
-Badges: Visual indicators for Python version, project status, and contributions.
-Emojis: Adds a fun, modern vibe (e.g., 🚀, 💻, 🏆).
-Tables: Clean presentation of test cases.
-Code Blocks: Syntax-highlighted Python code with inline comments.
-Structured Sections: Clear headings for problem, solution, and instructions.
-
-
-Built with 💖 for coders who love clean solutions and pretty READMEs!
